@@ -7,10 +7,10 @@
     <joint name="${name}_joint" type="fixed">
       <origin rpy="${roll} ${pitch} ${yaw}" xyz="${x} ${y} ${z}"/>
       <parent link="${parent}"/>
-      <child link="${name}_link"/>
+      <child link="${name}"/>
     </joint>
 
-    <link name="${name}_link">
+    <link name="${name}">
       <visual>
         <geometry>
           <box size="${sensor_box} ${sensor_box} ${sensor_box}"/>
@@ -40,7 +40,7 @@
       </collision> -->
     </link>
     <!-- imu -->
-    <gazebo reference="${name}_link">
+    <gazebo reference="${name}">
       <gravity>true</gravity>
       <sensor name="${name}_sensor" type="imu">
         <always_on>true</always_on>
